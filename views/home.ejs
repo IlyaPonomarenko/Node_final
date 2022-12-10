@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Customers Management System</title>
+
+	<style>
+		table {
+			font-family: arial, sans-serif;
+			border-collapse: collapse;
+			width: 100%;
+		}
+		td,
+		th {
+			border: 1px solid #dddddd;
+			text-align: left;
+			padding: 8px;
+		}
+
+		tr:nth-child(even) {
+			background-color: #dddddd;
+		}
+	</style>
+</head>
+
+<body>
+	<h2>Customers Management System</h2>
+	<table>
+		<tr>
+			<th>Id</th>
+			<th>First Name</th>
+            <th>Last Name</th>
+			<th>Favorite IceCream</th>
+			<th>Customer Class</th>
+		</tr>
+		<% data.forEach(element=> { %>
+			<tr>
+				<td>
+					<%= element.customerId %>
+				</td>
+				<td>
+					<%= element.firstname%>
+				</td>
+                <td>
+					<%= element.lastname %>
+				</td>
+				<td>
+					<%= element.favouriteIceCream %>
+				</td>
+				<td>
+					<%= element.customerclass %>
+				</td>
+			</tr>
+			<% }) %>
+	</table>
+	<form action="/" method="post">
+		<input type="text" placeholder="Customer First Name" name="firstname">
+		<input type="text" placeholder="Customer Last Name" name="lastname">
+		<input type="text" placeholder="Customers Favorite Ice Cream" name="favouriteIceCream">
+		<input type="text" placeholder="Customers Class" name="customerclass" >
+		<button type="submit">Add new</button>
+	</form>
+</body>
+
+</html>
