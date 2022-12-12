@@ -1,48 +1,30 @@
 "use strict";
 
+const path = require("path");
 const express = require("express");
-const fs = require("fs");
-const bodyParser = require("body-parser");
 const app = express();
-const customersData = require("./Ponomarenko_Ilia_customers.json");
+
+const { port, host, storage } = require("./serverConfig.json");
+
+const Datastorage = require(path.join(
+  __dirname,
+  storage.storageFolder,
+  storage.dataLayer
+));
+const dataStorage = new Datastorage();
 //let newData = [];
 //const customersDataParsed = JSON.parse(customersData)
 
 app.set("view engine", "ejs");
-app.use(bodyParser.json());
-app.use(
-  bodyParser.urlencoded({
-    extended: true,
-  })
-);
-app.get("/", function (req, res) {
-  res.render("home", {
-    data: customersData,
-  });
-});
+app.set("views", path.join(__dirname, "pages"));
+app.use(express.urlencoded({ extended: false }));
+const menuPath = path.join(__dirname, "menu.html");
 
-app.post("/", (req, res) =>{
-  const newCustomerId = customersData.length+1;
-  const newCustomerFirstName = req.body.firstname;
-  const newCustomerLastName = req.body.lastname;
-  const newCustomerIceCream = req.body.favouriteIceCream;
-  const newCustomerClass = req.body.customerclass;
-  customersData.push({
-    customerId:newCustomerId,
-    firstname:newCustomerFirstName,
-    lastname:newCustomerLastName,
-    favouriteIceCream:newCustomerIceCream,
-    customerclass:newCustomerClass
-  });
-  // let writeData = JSON.stringify(newData)
-  // fs.writeFile("Ponomarenko_Ilia_customers.json", writeData, err =>{
-  //   if(err) throw err;
-  //   console.log("New customer added")
-  // })
-  res.render("home", {
-    data:customersData
-  })
-})
-app.listen(3000, (req, res) => {
-    console.log("App is running on port 3000")
-}) 
+app.get("/", (req, res) => res.sendFile(menuPath));
+app.get("/all", (req, res) =>
+  dataStorage
+    .getAll()
+    .then((data) => res.render("allCustomers", { result: data }))
+);
+
+app.listen(port, host, () => console.log("Server at 3000 is listening"));

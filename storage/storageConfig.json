@@ -1,0 +1,5 @@
+{
+    "storageFile":"Ponomarenko_Ilia_customers.json",
+    "adapterFile":"customersAdapter.js",
+    "key":"customerId"
+}
