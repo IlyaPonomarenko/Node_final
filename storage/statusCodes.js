@@ -18,13 +18,13 @@ const MESSAGES = {
         code: CODES.PROGRAM_ERROR,
         type: 'error'
     }),
-    NOT_FOUND: id => ({
-        message: `No customer found with id ${id}`,
+    NOT_FOUND: customerId => ({
+        message: `No customer found with ${customerId}`,
         code: CODES.NOT_FOUND,
         type: 'error'
     }),
-    INSERT_OK: id => ({
-        message: `Customer ${id} was inserted`,
+    INSERT_OK: customerId => ({
+        message: `Customer ${customerId} was inserted`,
         code: CODES.INSERT_OK,
         type: 'info'
     }),
@@ -33,13 +33,13 @@ const MESSAGES = {
         code:CODES.NOT_INSERTED,
         type:'error'
     }),
-    ALREADY_IN_USE: id=>({
-        message:`Customer ${id} was already in use`,
+    ALREADY_IN_USE: customerId=>({
+        message:`Customer ${customerId}} was already in use`,
         code:CODES.ALREADY_IN_USE,
         type:'error'
     }),
-    UPDATE_OK: id=>({
-        message:`Customer ${id} was updated`,
+    UPDATE_OK: customerId=>({
+        message:`Customer ${customerId} was updated`,
         code:CODES.UPDATE_OK,
         type:'info'
     }),
@@ -48,13 +48,13 @@ const MESSAGES = {
         code:CODES.NOT_UPDATED,
         type:'error'
     }),
-    REMOVE_OK: id=>({
-        message:`Customer ${id} was removed`,
+    REMOVE_OK: customerId=>({
+        message:`Customer ${customerId} was removed`,
         code:CODES.REMOVE_OK,
         type:'info'
     }),
-    NOT_REMOVED: id=>({
-        message:`No customer found with Id ${id}.Nothing removed`,
+    NOT_REMOVED: customerId=>({
+        message:`No customer found with ${customerId} removed`,
         code:CODES.NOT_REMOVED,
         type:'error'
     })

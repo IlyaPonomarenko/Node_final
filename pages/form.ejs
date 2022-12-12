@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title><%= title %></title>
-    <link rel="stylesheet" href="/styles/basicStyles.css">
 </head>
 <body>
     <main>
@@ -11,9 +10,9 @@
         <form action="<%= action %>" method="POST">
             <div>
                 <p>
-                    <label for="id">Employee Id:</label>
-                    <input type="text" id="id" name="id" size="5"
-                    value="<%= id.value %>" <%= id.readonly %> >
+                    <label for="customerId">Customer Id:</label>
+                    <input type="text" id="customerId" name="customerId" size="5"
+                    value="<%= customerId.value %>" <%= customerId.readonly %> >
                 </p>
                 <p>
                     <label for="firstname">Firstname:</label>
@@ -26,14 +25,14 @@
                     value="<%= lastname.value %>" <%= lastname.readonly %> >
                 </p>
                 <p>
-                    <label for="department">Department:</label>
-                    <input type="text" id="department" name="department" size="10"
-                    value="<%= department.value %>" <%= department.readonly %> >
+                    <label for="favouriteIceCream">favouriteIceCream:</label>
+                    <input type="text" id="favouriteIceCream" name="favouriteIceCream" size="25"
+                    value="<%= favouriteIceCream.value %>" <%= favouriteIceCream.readonly %> >
                 </p>
                 <p>
-                    <label for="salary">Salary:</label>
-                    <input type="text" id="salary" name="salary" size="10"
-                    value="<%= salary.value %>" <%= salary.readonly %> >
+                    <label for="customerclass">Class:</label>
+                    <input type="text" id="customerclass" name="customerclass" size="10"
+                    value="<%= customerclass.value %>" <%= customerclass.readonly %> >
                 </p>
             </div>
             <button type="submit">Submit</button>
