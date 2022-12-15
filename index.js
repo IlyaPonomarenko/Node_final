@@ -12,8 +12,10 @@ const Datastorage = require(path.join(
   storage.dataLayer
 ));
 const dataStorage = new Datastorage();
-//let newData = [];
-//const customersDataParsed = JSON.parse(customersData)
+
+
+app.use(express.urlencoded({extended:false}));
+app.use(express.static(path.join(__dirname,"public")))
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "pages"));
@@ -49,7 +51,7 @@ app.get("/inputform", (req, res) =>
     customerId: { value: "", readonly: "" },
     firstname: { value: "", readonly: "" },
     lastname: { value: "", readonly: "" },
-    favoriteIceCream: { value: "", readonly: "" },
+    favouriteIceCream: { value: "", readonly: "" },
     customerclass: { value: "", readonly: "" },
   })
 );
@@ -68,7 +70,7 @@ app.get("/updateform", (req, res) =>
     customerId: { value: "", readonly: "" },
     firstname: { value: "", readonly: "readonly" },
     lastname: { value: "", readonly: "readonly" },
-    favoriteIceCream: { value: "", readonly: "readonly" },
+    favouriteIceCream: { value: "", readonly: "readonly" },
     customerclass: { value: "", readonly: "readonly" },
   })
 );
@@ -86,8 +88,8 @@ app.post("/updatedata", (req, res) => {
         customerId: { value: customer.customerId, readonly: "readonly" },
         firstname: { value: customer.firstname, readonly: "" },
         lastname: { value: customer.lastname, readonly: "" },
-        favoriteIceCream: { value: customer.department, readonly: "" },
-        customerclass: { value: customer.salary, readonly: "" },
+        favouriteIceCream: { value: customer.favouriteIceCream, readonly: "" },
+        customerclass: { value: customer.customerclass, readonly: "" },
       })
     )
     .catch((error) => sendErrorPage(res, error));
@@ -105,7 +107,7 @@ app.post("/update", (req, res) => {
 app.get("/removePerson", (req, res) =>
   res.render("getCustomer", {
     title: "Remove",
-    header1: "remove",
+    header1: "Remove customer data",
     action: "/removePerson",
   })
 );

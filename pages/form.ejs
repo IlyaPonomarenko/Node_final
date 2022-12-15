@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title><%= title %></title>
+    <link rel="stylesheet" href="/styles/Styles.css">
 </head>
 <body>
     <main>
@@ -16,7 +17,7 @@
                 </p>
                 <p>
                     <label for="firstname">Firstname:</label>
-                    <input type="text" id="firstname" name="firstname" size="15"
+                    <input type="text" id="firstname" name="firstname" size="25"
                     value="<%= firstname.value %>" <%= firstname.readonly %> >
                 </p>
                 <p>
@@ -25,13 +26,13 @@
                     value="<%= lastname.value %>" <%= lastname.readonly %> >
                 </p>
                 <p>
-                    <label for="favouriteIceCream">favouriteIceCream:</label>
+                    <label for="favouriteIceCream">Ice Cream:</label>
                     <input type="text" id="favouriteIceCream" name="favouriteIceCream" size="25"
                     value="<%= favouriteIceCream.value %>" <%= favouriteIceCream.readonly %> >
                 </p>
                 <p>
-                    <label for="customerclass">Class:</label>
-                    <input type="text" id="customerclass" name="customerclass" size="10"
+                    <label for="customerclass">Customer Class:</label>
+                    <input type="text" id="customerclass" name="customerclass" size="25"
                     value="<%= customerclass.value %>" <%= customerclass.readonly %> >
                 </p>
             </div>

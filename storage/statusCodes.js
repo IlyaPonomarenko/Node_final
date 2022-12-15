@@ -19,7 +19,7 @@ const MESSAGES = {
         type: 'error'
     }),
     NOT_FOUND: customerId => ({
-        message: `No customer found with ${customerId}`,
+        message: `No customer found with id: ${customerId}`,
         code: CODES.NOT_FOUND,
         type: 'error'
     }),

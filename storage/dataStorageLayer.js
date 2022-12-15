@@ -11,7 +11,7 @@ module.exports = class Datastorage {
   getOne(customerId) {
     return new Promise(async (resolve, reject) => {
       if (!customerId) {
-        reject(MESSAGES.NOT_FOUND(customerId));
+        reject(MESSAGES.NOT_FOUND("--empty--"));
       } else {
         const result = await getFromStorage(customerId);
         if (result) {

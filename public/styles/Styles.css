@@ -1,0 +1,30 @@
+*{
+    font-family: Arial, sans-serif;  
+    text-align: center;
+}
+table{
+    font-family: Arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+td,th{
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+tr:nth-child(even){
+    background-color: #dddddd;
+}
+form{
+    text-align: center;
+    padding: 2px;
+}
+button{
+    max-width: 50%;
+    color: white;
+    background-color: #c1121f;
+    border: 0px solid;
+    border-radius: 4px;
+    padding: 5px;
+    margin-top: 1em;
+}
