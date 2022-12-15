@@ -79,7 +79,7 @@ app.post("/updatedata", (req, res) => {
   if (!req.body) return res.sendStatus(500);
 
   dataStorage
-    .getOne(req.body.id)
+    .getOne(req.body.customerId)
     .then((customer) =>
       res.render("form", {
         title: "Update Customer",

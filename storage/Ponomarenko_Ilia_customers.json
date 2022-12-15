@@ -10,7 +10,7 @@
         "customerId": 2000,
         "firstname": "Matt",
         "lastname": "Garcia",
-        "favouriteIceCream": "blueberry",
+        "favouriteIceCream": "chocolate",
         "customerclass": "SuperBonus"
     },
     {
@@ -40,12 +40,5 @@
         "lastname": "River",
         "favouriteIceCream": "caramel",
         "customerclass": "R.I.P"
-    },
-    {
-        "customerId": 212,
-        "firstname": "dsad",
-        "lastname": "dsad",
-        "favouriteIceCream": "dsadas",
-        "customerclass": "asda"
     }
 ]

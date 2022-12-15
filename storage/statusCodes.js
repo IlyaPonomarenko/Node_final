@@ -34,7 +34,7 @@ const MESSAGES = {
         type:'error'
     }),
     ALREADY_IN_USE: customerId=>({
-        message:`Customer ${customerId}} was already in use`,
+        message:`Customer ${customerId} is already in use`,
         code:CODES.ALREADY_IN_USE,
         type:'error'
     }),
